@@ -9,13 +9,19 @@ echo .
 echo ------------------------------------------------------
 set /p name=        User     :
 set /p password=    Password :
-if %password% == ageng123 (
+if "%name%" == "ageng" (
+if "%password%" == "123" (
     goto begin
-) else (
-echo Password salah
-echo /a x= enter...................!!
-goto login
-)    
+	) else (
+	echo password salah	
+	pause
+	goto login  
+)	
+	) else (
+	echo username salah
+	pause
+	goto login
+)
 
 :begin
 cls
@@ -29,14 +35,14 @@ echo =======================================================
 set /p pilihan=Pilih menu yang anda inginkan :
 
 		if %pilihan% == 1 (
-			goto 1
+			goto setting
 		) else if %pilihan% == 2 (
-			goto 2
+			goto makanan
 		) else if %pilihan% == 3 (
-			goto 3
+			goto exit
 		)
 
-	:1 
+	:setting 
 	cls
 	echo ========================================================
 	echo 				Menu setting 
@@ -98,7 +104,7 @@ set /p pilihan=Pilih menu yang anda inginkan :
 			exit
 
 
-		:2
+		:makanan
 		cls
 		echo =================================
 		echo 	Pilihan Menu
@@ -108,7 +114,8 @@ set /p pilihan=Pilih menu yang anda inginkan :
 		echo [3] paket 3 (ayam goreng krispi)
 		echo [4] paket premium (gurame + cumi)
 		echo [5] paket gold (gurame + seafood)
-		echo [88] kembali		[0] exit
+		echo [88] kembali
+		echo [0] exit
 		set /p pilihan=Pilih Menu Masakan :
 
 				if %pilihan% == 1 (
@@ -121,6 +128,8 @@ set /p pilihan=Pilih menu yang anda inginkan :
 					goto 4
 				) else if %pilihan% == 5 (
 					goto 5
+				) else if %pilihan%	== 88 (
+					goto 88
 				) else if %pilihan% == 0 (
 					goto 0
 				)
@@ -180,3 +189,6 @@ set /p pilihan=Pilih menu yang anda inginkan :
 
 				:0
 				exit
+				
+:exit
+exit
