@@ -9,7 +9,6 @@ echo .
 echo ------------------------------------------------------
 set /p name=        User     :
 set /p password=    Password :
-if %name% ==
 if %password% == ageng123 (
     goto begin
 ) else (
